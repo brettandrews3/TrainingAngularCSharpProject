@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
       id: undefined,
       date: undefined,
       distanceInMiles: 0,
-      timeInMinutes: 0
+      timeInMinutes: 0      // Why does this default to 1 hour, xx minutes when posting to page?
     } as Workout;
   }
 

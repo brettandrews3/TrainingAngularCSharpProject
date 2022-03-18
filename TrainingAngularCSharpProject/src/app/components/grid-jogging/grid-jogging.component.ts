@@ -1,6 +1,7 @@
 import { EventEmitter, Input, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Workout } from '../../models/workout';
+import { TimeCalculationUtil } from '../../utils/time.calculation.util';
 
 @Component({
   selector: 'app-grid-jogging',
@@ -30,5 +31,8 @@ export class GridJoggingComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.joggingData.forEach((rec) => {
+      rec.timeInMinutes = TimeCalculationUtil.convertTime(rec.timeInMinutes);
+    })
   }
 }
